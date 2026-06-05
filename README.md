@@ -12,3 +12,26 @@ repositori projek pemrograman web dengan html css php java yang dilakukan sebaga
 | 3  | Hafish Athallah | H1H0240 | Front-End Developer |
 
 ---
+
+---
+# struktur folder project
+
+Adventure-time/
+│
+├── public/
+│   ├── index.php
+│   └── assets/
+│
+├── app/
+│   ├── models/
+│   ├── views/
+│   └── controllers/
+│
+├── config/
+│   ├── database.php
+│   └── config.php
+│
+├── auth/
+├── routes/
+└── README.md
+---
