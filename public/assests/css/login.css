@@ -1,0 +1,91 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        rgba(199, 199, 199, 0.4),
+        rgba(199, 199, 199, 0.4)
+    ), url('../pics/bg1.jpg');
+
+    background-size: cover;
+    background-position: cover;
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.font-style {
+    font-family: "Mochiy Pop One", sans-serif;
+}
+
+h1, h2 {
+    text-shadow: 0px 3px 4px rgba(0,0,0,0.33);
+    margin-bottom: -10px;
+    color: white;
+}
+
+.login-title {
+    text-align: center;
+    margin: -20px 0 40px 0 ;
+}
+
+main .login-box {
+    background-color: #FFF9E6;
+    border: 3px solid #f7e4a8;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.3);
+}
+
+main .login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+main .login-form form input {
+    margin-bottom: 20px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 2px solid #f7e4a8;
+    padding: 2px 15px;
+}
+
+main .login-form form input:hover {
+    background-color: #f7e4a8;
+    border: 2px solid #f7e4a8;
+}
+
+main .login-form form input:focus {
+    background-color: #f7e4a8;
+    border: 2px solid #f7e4a8;
+}
+
+main .login-form form #masuk {
+    background-color: #F6A5C0;
+    border: 2px solid #e17c9e;
+    color: white;
+    font-size: 1.2rem;
+}
+
+main .login-form form #masuk:hover {
+    background-color: #e17c9e;
+    border: 2px solid #e17c9e;
+    cursor: pointer;
+}
+
+main .login-form form #guest {
+    background-color: #A4D4F4;
+    border: 2px solid #78b3da;
+    color: white;
+    font-size: 1.2rem;
+}
+
+main .login-form form #guest:hover {
+    background-color: #78b3da;
+    border: 2px solid #78b3da;
+    cursor: pointer;
+}
