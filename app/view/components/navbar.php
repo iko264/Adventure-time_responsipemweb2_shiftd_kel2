@@ -10,8 +10,8 @@
             <li><a href="<?=  BASE_URL ?>/index.php">Home</a></li>
             <li><a href="<?=  BASE_URL ?>/app/view/pages/character.php">Character</a></li>
             <li><a href="<?=  BASE_URL ?>/app/view/pages/items.php">Items</a></li>
-            <li><a href="<?=  BASE_URL ?>">World Map</a></li>
-            <li><a href="<?=  BASE_URL ?>">Storyline</a></li>
+            <li><a href="<?=  BASE_URL ?>/app/view/pages/world_map.php">World Map</a></li>
+            <li><a href="<?=  BASE_URL ?>/app/view/pages/storyline.php">Storyline</a></li>
         </ul>
     </div>
 

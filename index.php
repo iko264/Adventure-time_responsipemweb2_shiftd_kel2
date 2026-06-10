@@ -29,7 +29,7 @@
             </div>
 
             <div class="menu-card" style="--card-color: var(--blue); border: 2.5px solid var(--blue-dark);">
-                <a href="app/view/pages/storyline.php">
+                <a href="<?=  BASE_URL ?>/app/view/pages/storyline.php">
                     <img src="<?= BASE_URL ?>/public/assets/pics/icon-book.png" alt="Icon Character" width="50px"> Storyline
                 </a>
             </div>

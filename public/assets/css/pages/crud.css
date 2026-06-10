@@ -1,18 +1,20 @@
 .content-select-container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     margin-top: 30px;
 }
 
 .content-select-bg{
-    min-height: 500px;
-    /* max-width: 1100px; */
-    width: 60%;
+    min-height: 550px;
+    width: 90%;
+    max-width: 900px;
     background-image: 
     url('../../pics/paper-bg.jpg');
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     padding: 70px 90px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
@@ -70,4 +72,99 @@
     border-radius: 15px;
     background: rgba(255,255,255,0.8);
     color: #7bb3db;
+}
+
+/* World Map */
+.worldmap-hero {
+    margin: 20px auto;
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.worldmap-hero img {
+    width: 100%;
+    max-width: 600px;
+    object-fit: contain;
+    border-radius: 10px;
+    padding: 20px;
+    filter: drop-shadow(0px 4px 4px #00000052);
+}
+
+/* Accordion Lokasi */
+.world-locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.location-item {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.location-header {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #4a2c00;
+    font-family: inherit;
+    transition: color 0.2s;
+}
+
+.location-header:hover {
+    color: #7a4a00;
+}
+
+.location-header i {
+    transition: transform 0.3s ease;
+}
+
+.location-item.open .location-header i {
+    transform: rotate(180deg);
+}
+
+.location-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.3s ease;
+    padding: 0 5px;
+}
+
+.location-item.open .location-content {
+    max-height: 300px;
+    padding: 5px 5px 15px;
+}
+
+.part-name {
+    font-size: var(--header3);
+    font-family: var(--styling-font);
+}
+
+.location-content p {
+    color: #3a2000;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* STORY */
+.chapter-num {
+    display: inline-block;
+    background: rgba(100, 60, 0, 0.2);
+    color: #4a2c00;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-right: 8px;
+    border: 1px solid rgba(100, 60, 0, 0.3);
 }

@@ -33,7 +33,7 @@ body {
 	min-height: 100vh;
 	line-height: 1;
 	font-family: 'Poppins', sans-serif;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 ol, ul {
@@ -76,7 +76,8 @@ table {
 	--violet:#cd93f9;
 
 	--header1: 4rem;
-	--header2: 2rem;
+	--header2: 2.5rem;
+	--header3: 1.5rem;
 
 	--main-font: 'Poppins', sans-serif;
 	--styling-font: 'Mochiy Pop One', sans-serif;
