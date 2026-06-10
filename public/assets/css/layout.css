@@ -1,0 +1,39 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white);
+    padding: 5px 50px;
+    border-bottom: 4px solid var(--blue);
+}
+
+nav .nav-logo img {
+    width: 130px;
+}
+
+nav .nav-option ul{
+    display: flex;
+    gap: 40px;
+}
+
+nav .nav-option {
+    display: flex;
+    align-items: center;
+}
+
+nav .nav-option ul li a {
+    text-decoration: none;
+    color: var(--blue);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+nav .nav-option ul li a:hover {
+    font-weight: bold;
+    color: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+nav i {
+    color: var(--blue);
+}

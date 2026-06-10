@@ -1,33 +1,37 @@
-<?php include '../layout/header.php'?>
+<?php require_once '../../../config/config.php' ?>
 
-    <?php include '../components/navbar.php'; ?>
+    <?php include '../layout/header.php' ?>
+    <?php include '../components/navbar.php' ?>
 
     <main>
-        <h1 class="page-header">Items</h1>
+        <section class="page-title">
+            <h1 class="page-header">Items</h1>
+            <h2>See the Magical Items From Ooo</h2>
+        </section>
 
-        <section class="content-select-container">
-            <div class="content-select-bg">
+    <section class="content-select-container">
+        <div class="content-select-bg">
 
-                <div class="content-grid">
-                    <a href="#" class="content-card">
-                        <img src="../../../public/assests/pics/finn.png" alt="Finn" width="50px">
-                        <h3>Finn the Human</h3>
-                    </a>
+            <div class="content-grid">
+                <a href="#" class="content-card">
+                    <img src="<?= BASE_URL ?>/public/assets/pics/icon-crown.png" alt="Finn" width="50px">
+                    <h3>Ice King's Crown</h3>
+                </a>
 
-                    <a href="#" class="content-card">
-                        <img src="../../../public/assests/pics/bubblegum.png" alt="Bubblegum">
-                        <h3>Princess Bubblegum</h3>
-                    </a>
+                <a href="#" class="content-card">
+                    <img src="<?= BASE_URL ?>/public/assets/pics/icon-book.png" alt="Bubblegum">
+                    <h3>Enrichidion</h3>
+                </a>
 
-                    <a href="#" class="content-card add-card">
-                        <i class="fa-solid fa-plus"></i>
-                        <h3>Add Character</h3>
-                    </a>
-
-                </div>
+                <a href="#" class="content-card add-card">
+                    <i class="fa-solid fa-plus"></i>
+                    <h3>Add Character</h3>
+                </a>
 
             </div>
-        </section>
-    </main>
-    
-<?php include '../layout/footer.php'?>
+
+        </div>
+    </section>
+</main>
+
+<?php include '../layout/footer.php' ?>
