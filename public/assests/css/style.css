@@ -10,5 +10,48 @@
 }
 
 body {
+    min-height: 100vh;
+
+    background: 
+    linear-gradient(
+        rgba(199, 199, 199, 0.3),
+        rgba(199, 199, 199, 0.3)
+    ),
+    url('../pics/bg2.webp');
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: var(--font-primary);
     font-size: 16px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+nav .nav-option ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-option li {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+nav .nav-option ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+main .page-header {
+    font-family: var(--font-secondary);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 4rem;
 }
