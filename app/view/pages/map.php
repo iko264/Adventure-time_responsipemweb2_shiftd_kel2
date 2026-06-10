@@ -2,8 +2,8 @@
 
     <?php include '../components/navbar.php'; ?>
 
-    <main>
-    <h1 class="page-header">Characters</h1>
+<main>
+    <h1 class="page-header">World Map</h1>
 
     <section class="content-select-container">
         <div class="content-select-bg">
