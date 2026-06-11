@@ -34,5 +34,5 @@
                 </a>
             </div>
         </div>
-    </main>
+</main>
 <?php include 'app/view/layout/footer.php' ?>
