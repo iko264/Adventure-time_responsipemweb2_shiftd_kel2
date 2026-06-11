@@ -23,9 +23,9 @@
                     <h3>Enrichidion</h3>
                 </a>
 
-                <a href="#" class="content-card add-card">
+                <a href="items_create.php" class="content-card add-card">
                     <i class="fa-solid fa-plus"></i>
-                    <h3>Add Character</h3>
+                    <h3>Add Items</h3>
                 </a>
 
             </div>

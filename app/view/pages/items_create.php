@@ -4,8 +4,8 @@
 
 <main>
     <section class="page-title">
-        <h1 class="page-header">Character Creation</h1>
-        <h2>Add a New Citizen of Ooo</h2>
+        <h1 class="page-header">Item Creation</h1>
+        <h2>Add Your Items To Power Up Your Journey</h2>
     </section>
 
     <section class="content-select-container">
@@ -55,7 +55,7 @@
                 <!-- Tombol Submit -->
                 <div class="create-actions">
                     <a href="character.php" class="btn-cancel">Cancel</a>
-                    <button type="submit" class="btn-save">Save Character</button>
+                    <button type="submit" class="btn-save">Save Item</button>
                 </div>
 
             </form>
