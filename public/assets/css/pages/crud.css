@@ -168,3 +168,192 @@
     margin-right: 8px;
     border: 1px solid rgba(100, 60, 0, 0.3);
 }
+
+/* Character Detail */
+.character-detail-bg {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.character-detail-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.character-detail-image img {
+    width: 180px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+.character-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    background: var(--yellow);
+    border: 2px solid var(--yellow-dark);
+    border-radius: 25px;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #3a2000;
+    min-width: 100px;
+    font-size: 1rem;
+}
+
+.info-value {
+    color: #3a2000;
+    font-size: 1rem;
+}
+
+.character-detail-desc {
+    border-top: 2px solid rgba(100, 60, 0, 0.2);
+    padding-top: 20px;
+}
+
+.character-detail-desc p {
+    color: #3a2000;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Portrait Upload */
+.character-create-portrait {
+    flex-shrink: 0;
+}
+
+.portrait-upload-label {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.portrait-upload-label:hover {
+    border-color: #e8b84b;
+}
+
+.portrait-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #7bb3db;
+}
+
+.portrait-placeholder i {
+    font-size: 2.5rem;
+}
+
+.portrait-placeholder span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#portrait-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Input rows */
+.input-row input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #3a2000;
+    font-family: inherit;
+}
+
+.input-row input::placeholder {
+    color: rgba(58, 32, 0, 0.6);
+}
+
+/* Textarea deskripsi */
+.desc-label {
+    display: block;
+    font-weight: bold;
+    color: #3a2000;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.character-detail-desc textarea {
+    width: 100%;
+    min-height: 120px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(100,60,0,0.2);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #3a2000;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.character-detail-desc textarea::placeholder {
+    color: rgba(58, 32, 0, 0.5);
+}
+
+/* Tombol aksi */
+.create-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: 2px solid #aaa;
+    background: transparent;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.btn-cancel:hover {
+    background: rgba(0,0,0,0.05);
+}
+
+.btn-save {
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: none;
+    background: #e8b84b;
+    color: #3a2000;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-save:hover {
+    background: #d4a43a;
+}
