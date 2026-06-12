@@ -2,15 +2,15 @@
   "locations": [
     {
       "name": "Candy Kingdom",
-      "description": "Kerajaan yang dipimpin oleh Princess Bubblegum, terbuat dari permen dan cokelat."
+      "description": "A kingdom ruled by Princess Bubblegum, made entirely of candy and chocolate."
     },
     {
       "name": "Ice Kingdom",
-      "description": "Wilayah bersalju di utara Ooo, rumah bagi Ice King."
+      "description": "A snowy region in the north of Ooo, home to the Ice King."
     },
     {
       "name": "Tree Fort",
-      "description": "Rumah Finn dan Jake yang berbentuk pohon besar di Land of Ooo."
+      "description": "Finn and Jake's home, a massive tree located in the Land of Ooo."
     }
   ]
 }

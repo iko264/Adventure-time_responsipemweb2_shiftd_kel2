@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost:3306');
 define('DB_NAME', 'adventuretime'); 
 define('DB_USER', 'root'); 
-define('DB_PASS', 'MySQL5549'); 
+define('DB_PASS', 'kuda terbang'); 
 
 $koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
