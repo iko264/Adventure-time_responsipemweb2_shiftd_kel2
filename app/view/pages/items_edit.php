@@ -26,37 +26,50 @@ if (isset($_POST['submit'])) {
 <?php include '../components/navbar.php' ?>
 
 <main>
-    <section class="page-title">
-        <h1 class="page-header">Edit Item</h1>
-        <h2>Modify the magical item details</h2>
-    </section>
-
     <section class="content-select-container">
         <div class="content-select-bg">
-            <form action="" method="post" class="add-form" enctype="multipart/form-data">
+            <form action="" method="post" class="edit-form" enctype="multipart/form-data">
+
                 <input type="hidden" name="id" value="<?= $item['id']; ?>">
                 <input type="hidden" name="gambarLama" value="<?= $item['gambar']; ?>">
 
-                <label>Current Image</label><br>
-                <img src="<?= BASE_URL ?>/public/assets/pics/<?= $item['gambar']; ?>" width="150" style="margin-bottom: 10px;"><br>
-                
-                <label for="gambar">Upload New Image (Optional)</label>
-                <input type="file" id="gambar" name="gambar" accept="image/*"><br>
+                <div class="edit-top">
+                    <div class="content-create-portrait">
+                        <label for="gambar" class="portrait-upload-label">
+                            <img id="portrait-preview" src="<?= BASE_URL ?>/public/assets/pics/<?= $item['gambar']; ?>" alt="<?= $item['nama']; ?>">
+                        </label>
+                        <input type="file" id="gambar" name="gambar" accept="image/*" style="display: none;"
+                               onchange="document.getElementById('portrait-preview').src = window.URL.createObjectURL(this.files[0])">
+                    </div>
 
-                <label for="nama">Item Name</label>
-                <input type="text" id="nama" name="nama" value="<?= $item['nama']; ?>" required><br>
+                    <div class="edit-info">
+                        <div class="edit-row">
+                            <span class="edit-label">Change Name</span>
+                            <input type="text" id="nama" name="nama" value="<?= $item['nama']; ?>" required placeholder="Item Name">
+                        </div>
 
-                <label for="pemilik">Owner</label>
-                <input type="text" id="pemilik" name="pemilik" value="<?= $item['pemilik']; ?>"><br>
+                        <div class="edit-row">
+                            <span class="edit-label">Change Owner</span>
+                            <input type="text" id="pemilik" name="pemilik" value="<?= $item['pemilik']; ?>" placeholder="Owner">
+                        </div>
 
-                <label for="abilities">Abilities</label>
-                <input type="text" id="abilities" name="abilities" value="<?= $item['abilities']; ?>"><br>
+                        <div class="edit-row">
+                            <span class="edit-label">Change Abilities</span>
+                            <input type="text" id="abilities" name="abilities" value="<?= $item['abilities']; ?>" placeholder="Abilities">
+                        </div>
+                    </div>
+                </div>
 
-                <label for="deskripsi">Description</label>
-                <textarea id="deskripsi" name="deskripsi" rows="4"><?= $item['deskripsi']; ?></textarea><br>
+                <div class="edit-desc">
+                    <label for="deskripsi" class="desc-label">Description</label>
+                    <textarea id="deskripsi" name="deskripsi" required placeholder="Item description..."><?= $item['deskripsi']; ?></textarea>
+                </div>
 
-                <button type="submit" name="submit" class="submit-btn">Update Item</button>
-                <a href="items_detail.php?id=<?= $id; ?>" style="margin-left: 10px; color: red;">Cancel</a>
+                <div class="create-actions">
+                    <a href="items_detail.php?id=<?= $id; ?>" class="btn-cancel">Cancel</a>
+                    <button type="submit" name="submit" class="btn-save">Update Item</button>
+                </div>
+
             </form>
         </div>
     </section>

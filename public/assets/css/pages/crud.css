@@ -43,8 +43,8 @@
 }
 
 .content-card img{
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
     border-radius: 15px;
     border: 2px solid #444;
@@ -167,4 +167,321 @@
     border-radius: 20px;
     margin-right: 8px;
     border: 1px solid rgba(100, 60, 0, 0.3);
+}
+
+/* Character Detail */
+.content-detail-bg {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.content-detail-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.content-detail-image img {
+    width: 160px;
+    object-fit: contain;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.3));
+}
+
+.content-detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    background: var(--yellow);
+    border: 2px solid var(--yellow-dark);
+    border-radius: 25px;
+    padding: 10px 20px;
+    gap: 10px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #3a2000;
+    min-width: 100px;
+    font-size: 1rem;
+}
+
+.info-value {
+    color: #3a2000;
+    font-size: 1rem;
+}
+
+.content-detail-desc {
+    border-top: 2px solid rgba(100, 60, 0, 0.2);
+    padding-top: 20px;
+}
+
+.content-detail-desc p {
+    color: #3a2000;
+    line-height: 1.8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Portrait Upload */
+.content-create-portrait {
+    flex-shrink: 0;
+}
+
+.portrait-upload-label {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.portrait-upload-label:hover {
+    border-color: #e8b84b;
+}
+
+.portrait-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #7bb3db;
+}
+
+.portrait-placeholder i {
+    font-size: 2.5rem;
+}
+
+.portrait-placeholder span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#portrait-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Input rows */
+.input-row input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #3a2000;
+    font-family: inherit;
+}
+
+.input-row input::placeholder {
+    color: rgba(58, 32, 0, 0.6);
+}
+
+/* Textarea deskripsi */
+.desc-label {
+    display: block;
+    font-weight: bold;
+    color: #3a2000;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.content-detail-desc textarea {
+    width: 100%;
+    min-height: 120px;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(100,60,0,0.2);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #3a2000;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.content-detail-desc textarea::placeholder {
+    color: rgba(58, 32, 0, 0.5);
+}
+
+/* Tombol aksi */
+.create-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: 2px solid var(--pink);
+    background: var(--pink-dark);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.btn-cancel:hover {
+    background: var(--pink);
+}
+
+.btn-back {
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: 2px solid var(--blue-dark);
+    background: var(--blue);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.btn-back:hover {
+    background: var(--blue-dark);
+}
+
+.btn-save {
+    padding: 10px 24px;
+    border-radius: 25px;
+    border: none;
+    background: var(--yellow);
+    border: 2px solid var(--yellow-dark);
+    color: #3a2000;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-save:hover {
+    background: var(--yellow-dark);
+}
+
+/* ===================================================
+   CRUD - Edit Form
+   =================================================== */
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: 100%;
+    min-height: 410px; /* sesuaikan dgn min-height content-select-bg */
+}
+
+.edit-top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.edit-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+}
+
+/* Baris input edit */
+.edit-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed var(--yellow-dark);
+    border-radius: 12px;
+    padding: 8px 18px;
+    gap: 10px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.edit-row:focus-within {
+    border-color: var(--pink-dark);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.edit-label {
+    font-weight: bold;
+    color: #4a2c00;
+    min-width: 150px;
+    font-size: 0.95rem;
+}
+
+.edit-row input {
+    flex: 1;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #3a2000;
+    font-family: inherit;
+    padding: 4px 0;
+}
+
+.edit-row input::placeholder {
+    color: rgba(58, 32, 0, 0.5);
+}
+
+/* Icon kecil tanda "bisa diedit" */
+.edit-row::after {
+    content: "\f044"; /* fa-pen-to-square (jika pakai Font Awesome) */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: rgba(74, 44, 0, 0.4);
+    flex-shrink: 0;
+}
+
+/* Deskripsi - memanjang mengisi sisa ruang */
+.edit-desc {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-top: 2px solid rgba(100, 60, 0, 0.2);
+    padding-top: 15px;
+}
+
+.edit-desc textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 180px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed var(--yellow-dark);
+    border-radius: 12px;
+    padding: 15px 18px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #3a2000;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.edit-desc textarea:focus {
+    border-color: var(--pink-dark);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.edit-desc textarea::placeholder {
+    color: rgba(58, 32, 0, 0.5);
 }

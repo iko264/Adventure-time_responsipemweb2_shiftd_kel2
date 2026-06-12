@@ -2,10 +2,8 @@
 require_once __DIR__ . '/../../../config/config.php';
 require_once '../../../config/cek_auth.php';
 
-if ($_SESSION['role'] === 'guest') {
-    echo "<script>alert('Akses Ditolak! Guest tidak dapat melihat detail.'); document.location.href='character.php';</script>";
-    exit;
-}
+$isGuest = ($_SESSION['role'] === 'guest');
+
 require_once __DIR__ . '/../../../models/items.php';
 
 // Menangkap ID dari URL, pastikan tidak error jika ID kosong
@@ -23,32 +21,63 @@ if (!$item) {
 <?php include '../components/navbar.php' ?>
 
 <main>
+    <?php if (!$isGuest) : ?>
     <section class="content-select-container">
         <div class="content-select-bg">
-            <h1><?= htmlspecialchars($item['nama']); ?></h1>
-    
-            <img src="<?= BASE_URL ?>/public/assets/pics/<?= htmlspecialchars($item['gambar']); ?>" alt="<?= htmlspecialchars($item['nama']); ?>" width="200px" style="display:block; margin-bottom:15px;">
-    
-            <p><strong>Owner:</strong> <?= htmlspecialchars($item['pemilik']); ?></p>
-            <p><strong>Abilities:</strong> <?= htmlspecialchars($item['abilities']); ?></p>
-    
-            <div style="margin-top: 20px;">
-                <p><strong>Description:</strong></p>
-                <p><?= nl2br(htmlspecialchars($item['deskripsi'])); ?></p>
+            <div class="content-detail-bg">
+
+                <div class="content-detail-top">
+                    <div class="content-detail-image">
+                        <img src="<?= BASE_URL ?>/public/assets/pics/<?= htmlspecialchars($item['gambar']); ?>" alt="<?= htmlspecialchars($item['nama']); ?>">
+                    </div>
+
+                    <div class="content-detail-info">
+                        <div class="info-row">
+                            <span class="info-label">Name</span>
+                            <h1><?= htmlspecialchars($item['nama']); ?></h1>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Owner</span>
+                            <span class="info-value"><?= htmlspecialchars($item['pemilik']); ?></span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Abilities</span>
+                            <span class="info-value"><?= htmlspecialchars($item['abilities']); ?></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-detail-desc">
+                    <p><?= nl2br(htmlspecialchars($item['deskripsi'])); ?></p>
+                </div>
+
+                <div class="create-actions">
+                    <a href="items.php" class="btn-back">Kembali</a>
+
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
+                        <a href="items_edit.php?id=<?= $item['id']; ?>" class="btn-save">Edit Item</a>
+                        <a href="items_hapus.php?id=<?= $item['id']; ?>" class="btn-cancel" onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">Delete Item</a>
+                    <?php endif; ?>
+                </div>
+
             </div>
-    
-            <br>
-            <a href="items.php" class="submit-btn" style="text-decoration: none; padding: 10px 20px; background-color: #333; color: white;">Kembali</a>
-            <br>
-            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
-            <div class="action-buttons" style="margin-top: 20px;">
-                <a href="items_edit.php?id=<?= $item['id']; ?>" class="submit-btn" style="background-color: #ffc107; color: black; text-decoration: none; padding: 10px 20px; margin-right: 10px;">Edit Item</a>
-                <a href="items_hapus.php?id=<?= $item['id']; ?>" class="submit-btn" style="background-color: #dc3545; color: white; text-decoration: none; padding: 10px 20px;" onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">Delete Item</a>
-            </div>
-            <?php endif; ?>
         </div>
-        
     </section>
+    <?php endif; ?>
 </main>
+
+<?php if ($isGuest) : ?>
+    <?php include '../components/popup.php' ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showAccessPopup(
+                'Guest tidak dapat melihat detail items.',
+                '<?= BASE_URL ?>app/view/pages/character.php'
+            );
+        });
+    </script>
+<?php endif; ?>
 
 <?php include '../layout/footer.php' ?>

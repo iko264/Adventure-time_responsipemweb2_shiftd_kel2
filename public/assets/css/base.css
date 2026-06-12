@@ -57,6 +57,7 @@ table {
 
 :root {
 	--white: rgb(244, 244, 244);
+	--black: rgb(28, 28, 28);
 
 	--blue:#029ac3;
 	--blue-dark:#0176a4;

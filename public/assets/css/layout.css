@@ -37,3 +37,185 @@ nav .nav-option ul li a:hover {
 nav i {
     color: var(--blue);
 }
+
+/* ===== Nav User Dropdown ===== */
+.nav-user {
+    position: relative;
+}
+
+/* ===== Nav User Pill Button ===== */
+.user-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 8px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--main-font);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-pill:hover {
+    background-color: var(--blue-dark);
+}
+
+.user-pill i {
+    font-size: 1.4rem;
+}
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    min-width: 180px;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 1000;
+
+    /* hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.user-dropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #eee;
+}
+
+.user-dropdown-header i {
+    font-size: 1.4rem;
+    color: var(--blue);
+}
+
+.user-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    transition: background 0.15s ease;
+}
+
+.user-dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+.logout-item {
+    color: #e05656;
+    font-weight: 600;
+}
+
+.logout-item:hover {
+    background-color: #ffe3e3;
+}
+
+/* Optional: small arrow pointing to icon */
+.user-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 14px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--white);
+    transform: rotate(45deg);
+    box-shadow: -2px -2px 4px rgba(0,0,0,0.05);
+}
+
+/* ===== Access Denied Popup ===== */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-box {
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 35px 40px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+    transform: translateY(-20px) scale(0.95);
+    transition: transform 0.25s ease;
+}
+
+.popup-overlay.show .popup-box {
+    transform: translateY(0) scale(1);
+}
+
+.popup-icon {
+    font-size: 3rem;
+    color: var(--pink-dark);
+    margin-bottom: 12px;
+}
+
+.popup-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    font-family: var(--main-font);
+}
+
+.popup-message {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+.popup-btn {
+    background-color: var(--pink-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.popup-btn:hover {
+    background-color: var(--pink);
+}

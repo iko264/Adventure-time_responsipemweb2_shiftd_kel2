@@ -1,10 +1,9 @@
 <?php 
 require_once '../../../config/config.php';
 require_once '../../../config/cek_auth.php';
+require_once '../layout/header.php';
+require_once '../components/navbar.php';
  ?>
-
-        <?php include '../layout/header.php' ?>
-        <?php include '../components/navbar.php' ?>
 
         <main>
             <section class="page-title">

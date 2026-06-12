@@ -3,6 +3,8 @@ session_start();
 
 // 1. Panggil file modelnya
 require_once '../models/auth.php'; 
+include '../config/config.php';
+include '../app/view/layout/header_login.php';
 
 // Jika sudah login, langsung tendang ke halaman character
 if (isset($_SESSION['role'])) {
@@ -43,20 +45,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adventure Time Wiki</title>
-    <link rel="stylesheet" href="../public/assets/css/style.css">
-    <link rel="stylesheet" href="../public/assets/css/login.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
 
     <header>
         <img src="../public/assets/pics/logo.png" width="200px" alt="Logo Adventure Time">

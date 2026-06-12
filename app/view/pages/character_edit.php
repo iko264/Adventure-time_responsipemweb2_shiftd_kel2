@@ -2,6 +2,8 @@
 include_once __DIR__ . '/../../../config/config.php';
 include_once __DIR__ . '/../../../config/koneksi.php';
 require_once '../../../config/cek_auth.php'; // 1. Wajib ada di paling atas
+require_once '../layout/header.php';
+require_once '../components/navbar.php';
 
 // 2. Blokir jika role BUKAN admin
 if ($_SESSION['role'] !== 'admin') {
@@ -22,41 +24,51 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<?php include '../layout/header.php' ?>
-<?php include '../components/navbar.php' ?>
-
 <main>
-    <section class="page-title">
-        <h1 class="page-header">Edit Character</h1>
-        <h2>Modify the character details</h2>
-    </section>
-
     <section class="content-select-container">
         <div class="content-select-bg">
-            <form action="" method="post" class="add-form" enctype="multipart/form-data">
+            <form action="" method="post" class="edit-form" enctype="multipart/form-data">
+
                 <input type="hidden" name="id" value="<?= $k['id']; ?>">
                 <input type="hidden" name="gambarLama" value="<?= $k['gambar']; ?>">
 
-                <label>Current Image</label><br>
-                <img src="<?= BASE_URL ?>/public/assets/pics/<?= $k['gambar']; ?>" width="150" style="margin-bottom: 10px;"><br>
-                
-                <label for="gambar">Upload New Image (Optional)</label>
-                <input type="file" id="gambar" name="gambar" accept="image/*"><br>
+                <div class="edit-top">
+                    <div class="content-create-portrait">
+                        <label for="gambar" class="portrait-upload-label">
+                            <img id="portrait-preview" src="<?= BASE_URL ?>/public/assets/pics/<?= $k['gambar']; ?>" alt="<?= $k['nama']; ?>">
+                        </label>
+                        <input type="file" id="gambar" name="gambar" accept="image/*" style="display: none;"
+                               onchange="document.getElementById('portrait-preview').src = window.URL.createObjectURL(this.files[0])">
+                    </div>
 
-                <label for="nama">Character Name</label>
-                <input type="text" id="nama" name="nama" value="<?= $k['nama']; ?>" required><br>
+                    <div class="edit-info">
+                        <div class="edit-row">
+                            <span class="edit-label">Change Name</span>
+                            <input type="text" id="nama" name="nama" value="<?= $k['nama']; ?>" required placeholder="Character Name">
+                        </div>
 
-                <label for="occupation">Occupation</label>
-                <input type="text" id="occupation" name="occupation" value="<?= $k['occupation']; ?>" required><br>
+                        <div class="edit-row">
+                            <span class="edit-label">Change Occupation</span>
+                            <input type="text" id="occupation" name="occupation" value="<?= $k['occupation']; ?>" required placeholder="Occupation">
+                        </div>
 
-                <label for="home">Home</label>
-                <input type="text" id="home" name="home" value="<?= $k['home']; ?>" required><br>
+                        <div class="edit-row">
+                            <span class="edit-label">Change Home</span>
+                            <input type="text" id="home" name="home" value="<?= $k['home']; ?>" required placeholder="Home">
+                        </div>
+                    </div>
+                </div>
 
-                <label for="deskripsi">Description</label>
-                <textarea id="deskripsi" name="deskripsi" rows="4" required><?= $k['deskripsi']; ?></textarea><br>
+                <div class="edit-desc">
+                    <label for="deskripsi" class="desc-label">Description</label>
+                    <textarea id="deskripsi" name="deskripsi" required placeholder="Character description..."><?= $k['deskripsi']; ?></textarea>
+                </div>
 
-                <button type="submit" name="submit" class="submit-btn">Update Character</button>
-                <a href="character_detail.php?id=<?= $id; ?>" style="margin-left: 10px; color: red;">Cancel</a>
+                <div class="create-actions">
+                    <a href="character_detail.php?id=<?= $id; ?>" class="btn-cancel">Cancel</a>
+                    <button type="submit" name="submit" class="btn-save">Update Character</button>
+                </div>
+
             </form>
         </div>
     </section>

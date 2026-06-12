@@ -1,11 +1,12 @@
 <?php 
 require_once '../../../config/config.php';
 require_once '../../../config/cek_auth.php';
+require_once '../../../config/koneksi.php';
+require_once '../layout/header.php';
+require_once '../components/navbar.php';
 
-if ($_SESSION['role'] === 'guest') {
-    echo "<script>alert('Akses Ditolak! Guest tidak dapat melihat detail.'); document.location.href='character.php';</script>";
-    exit;
-}
+$isGuest = ($_SESSION['role'] === 'guest');
+
 require_once '../../../models/character.php';
 
 $id = $_GET['id'];
@@ -13,27 +14,64 @@ $query = mysqli_query($koneksi, "SELECT * FROM karakter WHERE id = $id");
 $k = mysqli_fetch_assoc($query);
 ?>
 
-<?php include '../layout/header.php' ?>
-<?php include '../components/navbar.php' ?>
-
 <main>
+    <?php if (!$isGuest) : ?>
     <section class="content-select-container">
         <div class="content-select-bg">
-            <h1><?= $k['nama']; ?></h1>
-            <img src="<?= BASE_URL ?>/public/assets/pics/<?= $k['gambar']; ?>" width="300">
-            <p><strong>Occupation:</strong> <?= $k['occupation']; ?></p>
-            <p><strong>Home:</strong> <?= $k['home']; ?></p>
-            <p><strong>Description:</strong> <?= $k['deskripsi']; ?></p>
-            <a href="character.php">Kembali</a>
-            <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
-            <div class="action-buttons" style="margin-top: 20px;">
-                <a href="character_edit.php?id=<?= $k['id']; ?>" class="submit-btn">Edit Character</a>
-                <a href="character_hapus.php?id=<?= $k['id']; ?>" class="submit-btn">Delete Character</a>
-            </div>
-            <?php endif; ?>
-        </div>
+            <div class="content-detail-bg">
 
+                <div class="content-detail-top">
+                    <div class="content-detail-image">
+                        <img src="<?= BASE_URL ?>/public/assets/pics/<?= $k['gambar']; ?>" alt="<?= $k['nama']; ?>">
+                    </div>
+
+                    <div class="content-detail-info">
+                        <div class="info-row">
+                            <span class="info-label">Name</span>
+                            <h1><?= $k['nama']; ?></h1>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Occupation</span>
+                            <span class="info-value"><?= $k['occupation']; ?></span>
+                        </div>
+
+                        <div class="info-row">
+                            <span class="info-label">Home</span>
+                            <span class="info-value"><?= $k['home']; ?></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-detail-desc">
+                    <p><?= $k['deskripsi']; ?></p>
+                </div>
+
+                <div class="create-actions">
+                    <a href="character.php" class="btn-back">Kembali</a>
+
+                    <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
+                        <a href="character_edit.php?id=<?= $k['id']; ?>" class="btn-save">Edit Character</a>
+                        <a href="character_hapus.php?id=<?= $k['id']; ?>" class="btn-cancel">Delete Character</a>
+                    <?php endif; ?>
+                </div>
+
+            </div>
+        </div>
     </section>
+    <?php endif; ?>
 </main>
+
+<?php if ($isGuest) : ?>
+    <?php include '../components/popup.php' ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showAccessPopup(
+                'Guest tidak dapat melihat detail character.',
+                '<?= BASE_URL ?>app/view/pages/character.php'
+            );
+        });
+    </script>
+<?php endif; ?>
 
 <?php include '../layout/footer.php' ?>

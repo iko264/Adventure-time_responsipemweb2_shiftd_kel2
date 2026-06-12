@@ -1,0 +1,175 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+.home-page {
+    background:
+    linear-gradient(
+        rgba(199,199,199,0.3),
+        rgba(199,199,199,0.3)
+    ),
+    url('../../pics/bg1.jpg');
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+header img {
+    width: 200px;
+}
+
+/* ===== Main wrapper ===== */
+main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-top: -55px;
+}
+
+/* ===== Title ===== */
+.login-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-title h1 {
+    font-size: var(--header2);
+    color: var(--white);
+    text-shadow: 3px 3px 0px rgb(0, 0, 0, 0.3);
+    font-family: var(--styling-font);
+}
+
+.login-title h2 {
+    font-size: var(--header3);
+    color: var(--white);
+    text-shadow: 3px 3px 0px rgb(0, 0, 0, 0.3);
+    font-family: var(--styling-font);
+    margin-top: 20px;
+}
+
+/* ===== Login Box ===== */
+.login-box {
+    background-color: #fdf6e3;
+    border: 3px solid #e8d9a8;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 40px 50px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.login-form label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 25px;
+    border: 2px solid #f0e2b6;
+    border-radius: 10px;
+    background-color: #fffdf5;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+    border-color: var(--pink);
+}
+
+.login-form input[type="text"]::placeholder,
+.login-form input[type="password"]::placeholder {
+    color: #c9c0a8;
+}
+
+/* ===== Buttons ===== */
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    letter-spacing: 1px;
+}
+
+.login-form input[type="submit"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.login-form input[type="submit"]:active {
+    transform: translateY(0px);
+}
+
+/* Tombol "Sign In" - pink */
+.login-form input#masuk {
+    background-color: var(--pink);
+}
+
+/* Tombol "Sign In As Guest" - biru */
+.login-form input#guest {
+    background-color: var(--blue);
+    margin-bottom: 0;
+}
+
+/* ===== Error Message ===== */
+.login-form p {
+    background-color: #ffe3e3;
+    border: 1px solid #ff9b9b;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .login-title h1 {
+        font-size: 2rem;
+    }
+
+    .login-title h2 {
+        font-size: 1.2rem;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+        border-radius: 14px;
+    }
+
+    header img {
+        width: 140px;
+    }
+}
