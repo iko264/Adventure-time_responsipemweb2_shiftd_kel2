@@ -1,4 +1,5 @@
 <?php require_once '../../../config/config.php' ?>
+<?php require_once '../../../config/cek_auth.php' ?>
 <?php include '../layout/header.php' ?>
 <?php include '../components/navbar.php' ?>
 

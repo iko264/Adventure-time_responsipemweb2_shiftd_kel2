@@ -1,31 +1,16 @@
 <?php
 
-define('DB_HOST', 'localhost');    
-define('DB_NAME', 'AdventureTime'); 
-define('DB_USER', 'root');          
-define('DB_PASS', '');              
-define('DB_CHARSET', 'utf8mb4');    
+//define('DB_HOST', 'localhost:3307'); // sesuaikan dengan port mysql kalian, biasanya 3306 atau 3307 
+define('DB_HOST', 'localhost:3306');
+define('DB_NAME', 'adventuretime'); 
+define('DB_USER', 'root'); 
+define('DB_PASS', ''); 
 
-$dsn = "mysql:host=" . DB_HOST . 
-        ";port=3307" . 
-        //";port=3306" . //ganti ke 3306 jika port masih default
-       ";dbname=" . DB_NAME . 
-       ";charset=" . DB_CHARSET;
+// Koneksi menggunakan mysqli_connect
+$koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-$options = [
-    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
-
-try {
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
-    // echo "Koneksi berhasil!"; 
-    
-} catch (PDOException $e) {
-    die("<div class='alert alert-danger m-3'>
-            <strong>Error Koneksi Database!</strong><br>
-            " . htmlspecialchars($e->getMessage()) . "
-         </div>");
+// Cek jika koneksi gagal
+if (!$koneksi) {
+    die("Koneksi ke database gagal: " . mysqli_connect_error());
 }
 ?>
