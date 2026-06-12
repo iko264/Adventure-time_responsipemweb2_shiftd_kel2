@@ -10,9 +10,6 @@ if ($_SESSION['role'] !== 'admin') {
 }
 ?>
 
-<?php include '../layout/header.php' ?>
-<?php include '../components/navbar.php' ?>
-
 <?php
 require_once __DIR__ . '/../../../models/items.php';
 
