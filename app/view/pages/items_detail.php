@@ -74,7 +74,7 @@ if (!$item) {
         document.addEventListener('DOMContentLoaded', function () {
             showAccessPopup(
                 'Guest tidak dapat melihat detail items.',
-                '<?= BASE_URL ?>app/view/pages/character.php'
+                '<?= BASE_URL ?>app/view/pages/items.php'
             );
         });
     </script>
