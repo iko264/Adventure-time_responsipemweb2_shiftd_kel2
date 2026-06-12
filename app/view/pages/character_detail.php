@@ -52,7 +52,13 @@ $k = mysqli_fetch_assoc($query);
 
                     <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
                         <a href="character_edit.php?id=<?= $k['id']; ?>" class="btn-save">Edit Character</a>
-                        <a href="character_hapus.php?id=<?= $k['id']; ?>" class="btn-cancel">Delete Character</a>
+                        <button type="button" class="btn-cancel"
+                            onclick="showDeletePopup(
+                                '<?= addslashes($k['nama']); ?>',
+                                'character_hapus.php?id=<?= $k['id']; ?>'
+                            )">
+                            Delete Character
+                        </button>
                     <?php endif; ?>
                 </div>
 
@@ -62,12 +68,27 @@ $k = mysqli_fetch_assoc($query);
     <?php endif; ?>
 </main>
 
+<?php include '../components/popup.php' ?>
+
+<!-- Ini buat verifikasi kalo guest gabisa ngapa ngapain -->
 <?php if ($isGuest) : ?>
-    <?php include '../components/popup.php' ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             showAccessPopup(
                 'Guest tidak dapat melihat detail character.',
+                '<?= BASE_URL ?>app/view/pages/character.php'
+            );
+        });
+    </script>
+<?php endif; ?>
+
+
+<!-- Ini buat popup penghapusan item dan character -->
+<?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showSuccessPopup(
+                'Character telah berhasil dihapus dari database.',
                 '<?= BASE_URL ?>app/view/pages/character.php'
             );
         });

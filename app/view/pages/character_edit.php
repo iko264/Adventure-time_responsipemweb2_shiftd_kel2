@@ -41,7 +41,10 @@ if (isset($_POST['submit'])) {
                                onchange="document.getElementById('portrait-preview').src = window.URL.createObjectURL(this.files[0])">
                     </div>
 
+                    <!-- sisi bagian buat ngedit detail karakter -->
                     <div class="edit-info">
+
+                    <!-- form buat edit nama -->
                         <div class="edit-row">
                             <span class="edit-label">Change Name</span>
                             <input type="text" id="nama" name="nama" value="<?= $k['nama']; ?>" required placeholder="Character Name">
@@ -52,13 +55,15 @@ if (isset($_POST['submit'])) {
                             <input type="text" id="occupation" name="occupation" value="<?= $k['occupation']; ?>" required placeholder="Occupation">
                         </div>
 
+                        <!-- form buat home atau asal karakter -->
                         <div class="edit-row">
                             <span class="edit-label">Change Home</span>
                             <input type="text" id="home" name="home" value="<?= $k['home']; ?>" required placeholder="Home">
                         </div>
                     </div>
                 </div>
-
+                
+                <!-- form buat deskripsi -->
                 <div class="edit-desc">
                     <label for="deskripsi" class="desc-label">Description</label>
                     <textarea id="deskripsi" name="deskripsi" required placeholder="Character description..."><?= $k['deskripsi']; ?></textarea>

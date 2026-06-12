@@ -374,6 +374,7 @@
     background: var(--yellow-dark);
 }
 
+
 /* ===================================================
    CRUD - Edit Form
    =================================================== */
@@ -484,4 +485,274 @@
 
 .edit-desc textarea::placeholder {
     color: rgba(58, 32, 0, 0.5);
+}
+
+
+/* ===================================================
+   CREATE / TAMBAH FORM
+   =================================================== */
+
+.create-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    min-height: 410px;
+}
+
+/* Top layout: portrait (opsional) + field inputs */
+.create-top {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Kolom kiri: portrait upload (khusus character) */
+.create-portrait {
+    flex-shrink: 0;
+}
+
+.portrait-upload-label {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.85);
+    border-radius: 15px;
+    border: 2px dashed var(--yellow-dark);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.portrait-upload-label:hover {
+    border-color: var(--pink-dark);
+}
+
+.portrait-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #7bb3db;
+}
+
+.portrait-placeholder i {
+    font-size: 2.5rem;
+}
+
+.portrait-placeholder span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#portrait-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Kolom kanan: baris-baris input */
+.create-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex: 1;
+}
+
+/* Satu baris input */
+.create-row {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed var(--yellow-dark);
+    border-radius: 12px;
+    padding: 8px 18px;
+    gap: 10px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.create-row:focus-within {
+    border-color: var(--pink-dark);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.create-label {
+    font-weight: bold;
+    color: #4a2c00;
+    min-width: 130px;
+    font-size: 0.95rem;
+}
+
+.create-row input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #3a2000;
+    font-family: inherit;
+    padding: 4px 0;
+}
+
+.create-row input::placeholder {
+    color: rgba(58, 32, 0, 0.5);
+}
+
+/* Icon pen kecil di ujung kanan */
+.create-row::after {
+    content: "\f304";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: rgba(74, 44, 0, 0.35);
+    flex-shrink: 0;
+}
+
+/* Section deskripsi / textarea */
+.create-desc {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-top: 2px solid rgba(100, 60, 0, 0.2);
+    padding-top: 15px;
+    gap: 8px;
+}
+
+.create-desc-label {
+    font-weight: bold;
+    color: #4a2c00;
+    font-size: 0.95rem;
+}
+
+.create-desc textarea {
+    flex: 1;
+    width: 100%;
+    min-height: 120px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed var(--yellow-dark);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #3a2000;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.create-desc textarea:focus {
+    border-color: var(--pink-dark);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.create-desc textarea::placeholder {
+    color: rgba(58, 32, 0, 0.5);
+}
+
+/* Tombol aksi di bagian bawah form */
+.create-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* Page title section */
+.page-title {
+    text-align: center;
+    padding: 30px 20px 10px;
+}
+
+.page-header {
+    font-family: var(--styling-font);
+    font-size: var(--header1);
+    color: var(--white);
+}
+
+.page-title h2 {
+    font-size: var(--header2);
+    color: var(--white);
+    margin-top: 6px;
+}
+
+
+/* ===================================================
+   POPUP - Delete Confirmation & Success
+   =================================================== */
+ 
+/* Tombol berdampingan di dalam popup */
+.popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+}
+ 
+/* Varian icon */
+.popup-icon--danger {
+    color: var(--pink-dark);
+}
+ 
+.popup-icon--success {
+    color: var(--green);
+}
+ 
+/* Varian tombol: outline (Batal) */
+.popup-btn--outline {
+    background: transparent;
+    color: #555;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--main-font);
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+ 
+.popup-btn--outline:hover {
+    background-color: #f0f0f0;
+    border-color: #aaa;
+}
+ 
+/* Varian tombol: danger (Ya, Hapus) */
+.popup-btn--danger {
+    background-color: var(--pink-dark);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--main-font);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+ 
+.popup-btn--danger:hover {
+    background-color: var(--pink);
+}
+ 
+/* Varian tombol: success (OK setelah hapus) */
+.popup-btn--success {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 10px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--main-font);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+ 
+.popup-btn--success:hover {
+    background-color: var(--green-dark);
 }

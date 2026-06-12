@@ -15,15 +15,18 @@ require_once '../components/navbar.php';
             <div class="content-select-bg">
 
                 <div class="content-grid">
-                <?php 
-                require_once '../../../models/character.php';
-                $dataKarakter = getAllKarakter();
-                while ($row = mysqli_fetch_assoc($dataKarakter)) : ?>
+                <?php require_once '../../../models/character.php';
+                    $dataKarakter = getAllKarakter();
+
+                    while ($row = mysqli_fetch_assoc($dataKarakter)) : ?>
+
                     <a href="character_detail.php?id=<?= $row['id']; ?>" class="content-card">
                         <img src="<?= BASE_URL ?>/public/assets/pics/<?= $row['gambar']; ?>" alt="<?= $row['nama']; ?>" width="100px">
                         <h3><?= $row['nama']; ?></h3>
                     </a>
+
                 <?php endwhile; ?>
+
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
                     <a href="character_tambah.php" class="content-card add-card">
                         <i class="fa-solid fa-plus"></i>
@@ -36,4 +39,17 @@ require_once '../components/navbar.php';
         </section>
     </main>
 
-    <?php include '../layout/footer.php' ?>
+<?php include '../components/popup.php' ?>
+
+<?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        showSuccessPopup(
+            'Item telah berhasil dihapus dari database.',
+            'character.php'
+        );
+    });
+</script>
+<?php endif; ?>
+
+<?php include '../layout/footer.php' ?>

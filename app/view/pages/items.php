@@ -33,4 +33,17 @@
     </section>
 </main>
 
+<?php include '../components/popup.php' ?>
+
+<?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        showSuccessPopup(
+            'Item telah berhasil dihapus dari database.',
+            'items.php'
+        );
+    });
+</script>
+<?php endif; ?>
+
 <?php include '../layout/footer.php' ?>

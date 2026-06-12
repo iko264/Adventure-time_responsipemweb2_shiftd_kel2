@@ -6,11 +6,9 @@ $isGuest = ($_SESSION['role'] === 'guest');
 
 require_once __DIR__ . '/../../../models/items.php';
 
-// Menangkap ID dari URL, pastikan tidak error jika ID kosong
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
 $item = getItemById($id);
 
-// Pengecekan jika item tidak ditemukan di database
 if (!$item) {
     echo "<script>alert('Item tidak ditemukan!'); document.location.href='items.php';</script>";
     exit;
@@ -58,7 +56,13 @@ if (!$item) {
 
                     <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') : ?>
                         <a href="items_edit.php?id=<?= $item['id']; ?>" class="btn-save">Edit Item</a>
-                        <a href="items_hapus.php?id=<?= $item['id']; ?>" class="btn-cancel" onclick="return confirm('Apakah Anda yakin ingin menghapus item ini?')">Delete Item</a>
+                        <button type="button" class="btn-cancel"
+                            onclick="showDeletePopup(
+                                '<?= addslashes(htmlspecialchars($item['nama'])); ?>',
+                                'items_hapus.php?id=<?= $item['id']; ?>'
+                            )">
+                            Delete Item
+                        </button>
                     <?php endif; ?>
                 </div>
 
@@ -68,12 +72,24 @@ if (!$item) {
     <?php endif; ?>
 </main>
 
+<?php include '../components/popup.php' ?>
+
 <?php if ($isGuest) : ?>
-    <?php include '../components/popup.php' ?>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             showAccessPopup(
                 'Guest tidak dapat melihat detail items.',
+                '<?= BASE_URL ?>app/view/pages/items.php'
+            );
+        });
+    </script>
+<?php endif; ?>
+
+<?php if (isset($_GET['deleted']) && $_GET['deleted'] == 1) : ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            showSuccessPopup(
+                'Item telah berhasil dihapus dari database.',
                 '<?= BASE_URL ?>app/view/pages/items.php'
             );
         });
