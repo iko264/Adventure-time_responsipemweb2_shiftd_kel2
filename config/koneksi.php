@@ -6,7 +6,6 @@ define('DB_NAME', 'adventuretime');
 define('DB_USER', 'root'); 
 define('DB_PASS', ''); 
 
-// Koneksi menggunakan mysqli_connect
 $koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 // Cek jika koneksi gagal
