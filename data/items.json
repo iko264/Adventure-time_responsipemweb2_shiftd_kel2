@@ -1,7 +1,76 @@
 {
   "items": [
     {
-      "id": "test"
+      "id": "ice-king-crown",
+      "name": "Ice King's Crown",
+      "type": "Magical Crown",
+      "origin": "Ice Kingdom",
+      "owner": "Ice King (formerly Simon Petrikov)",
+      "image": "icon-crown.png",
+      "description": "Mahkota ajaib berwarna merah dengan permata biru ini adalah sumber kekuatan sekaligus kutukan bagi Simon Petrikov. Mahkota memberikan kemampuan mengendalikan es dan salju, namun perlahan-lahan menggerogoti ingatan dan kewarasan pemakainya. Di balik kekuatannya tersimpan kisah pilu tentang cinta dan pengorbanan yang menyentuh hati."
+    },
+    {
+      "id": "finn-sword",
+      "name": "Finn's Golden Sword",
+      "type": "Melee Weapon",
+      "origin": "Land of Ooo",
+      "owner": "Finn the Human",
+      "image": "finn_sword.png",
+      "description": "Pedang emas ikonik milik Finn yang menemaninya dalam berbagai petualangan melawan kejahatan di Land of Ooo. Pedang ini terbuat dari logam kuning yang kokoh dan menjadi simbol keberanian sang pahlawan. Meskipun telah berganti banyak senjata, pedang emas ini tetap menjadi yang paling dikenali sebagai senjata andalan Finn."
+    },
+    {
+      "id": "jake-viola",
+      "name": "Jake's Viola",
+      "type": "Musical Instrument",
+      "origin": "Tree Fort",
+      "owner": "Jake the Dog",
+      "image": "jake_viola.png",
+      "description": "Viola kesayangan Jake the Dog yang sering ia mainkan di kala santai bersama Finn di Tree Fort. Meski Jake bisa mengubah tubuhnya menjadi apa saja, viola ini adalah benda fisik yang benar-benar ia sayangi. Alunan musiknya kerap terdengar merdu di malam hari, membuktikan bahwa Jake bukan hanya petualang, tapi juga seniman berbakat."
+    },
+    {
+      "id": "lich-crown",
+      "name": "Lich's Enchiridion",
+      "type": "Ancient Tome",
+      "origin": "Unknown / Ancient",
+      "owner": "The Lich",
+      "image": "enchiridion.webp",
+      "description": "Kitab kuno penuh misteri yang menyimpan pengetahuan tentang kekuatan gelap dan portal antar dimensi. Buku ini pernah menjadi incaran The Lich untuk menghancurkan seluruh kehidupan di Land of Ooo. Setiap halamannya tersegel dengan mantra kuno, dan hanya mereka yang berjiwa murni yang mampu membuka isinya tanpa terkena kutukan."
+    },
+    {
+      "id": "bmо",
+      "name": "BMO",
+      "type": "Living Game Console",
+      "origin": "MO Factory",
+      "owner": "Finn & Jake",
+      "image": "bmo.png",
+      "description": "BMO adalah konsol game hidup berwarna hijau yang tinggal bersama Finn dan Jake di Tree Fort. Meski kecil, BMO memiliki kepribadian unik, penuh rasa ingin tahu, dan sering menganggap dirinya sebagai karakter dalam cerita petualangannya sendiri. BMO tidak hanya berfungsi sebagai hiburan, tetapi juga sahabat setia yang selalu siap membantu kapan pun dibutuhkan."
+    },
+    {
+      "id": "nightosphere-amulet",
+      "name": "Nightosphere Amulet",
+      "type": "Magical Amulet",
+      "origin": "Nightosphere",
+      "owner": "Hunson Abadeer",
+      "image": "nightosphere_amulet.png",
+      "description": "Jimat gelap yang menjadi sumber kekuatan Hunson Abadeer, penguasa Nightosphere sekaligus ayah Marceline. Siapa pun yang mengenakannya akan memperoleh kekuatan luar biasa namun juga terancam kehilangan kendali diri dan menyerap jiwa semua makhluk di sekitarnya. Marceline pernah mengenakannya secara singkat, membuktikan betapa berbahayanya artefak ini."
+    },
+    {
+      "id": "flame-sword",
+      "name": "Flame Sword",
+      "type": "Elemental Weapon",
+      "origin": "Fire Kingdom",
+      "owner": "Flame Princess",
+      "image": "flame_sword.png",
+      "description": "Pedang berapi milik Flame Princess yang menyala dengan api elemental sejati dari Fire Kingdom. Tidak seperti api biasa, nyala pedang ini tidak bisa dipadamkan oleh air karena bersumber dari esensi api murni sang pemiliknya. Pedang ini mencerminkan kepribadian Flame Princess — indah namun berbahaya, dan selalu siap membakar siapa pun yang mengancam kerajaannya."
+    },
+    {
+      "id": "demon-blood-sword",
+      "name": "Demon Blood Sword",
+      "type": "Legendary Sword",
+      "origin": "Nightosphere",
+      "owner": "Marceline the Vampire Queen",
+      "image": "demon_blood_sword.png",
+      "description": "Pedang merah menyala yang terbuat dari darah iblis dan merupakan salah satu senjata paling kuat di Land of Ooo. Marceline mewarisi pedang ini dari ayahnya, Hunson Abadeer, dan kerap menggunakannya dalam pertempuran melawan musuh-musuh kuat. Pedang ini memiliki kemampuan memotong hampir semua material dan bereaksi terhadap kekuatan kegelapan di sekitarnya."
     }
   ]
 }

@@ -1,7 +1,15 @@
 <?php require_once '../../../config/config.php' ?>
 
-    <?php include '../layout/header.php' ?>
-    <?php include '../components/navbar.php' ?>
+<?php include '../layout/header.php' ?>
+<?php include '../components/navbar.php' ?>
+
+<?php
+$base       = realpath(__DIR__ . '/../../..');
+$jsonPath   = $base . '/data/items.json';
+$json       = file_get_contents($jsonPath);
+$data       = json_decode($json, true);
+$items      = $data['items'] ?? [];
+?>
 
     <main>
         <section class="page-title">
@@ -11,25 +19,22 @@
 
     <section class="content-select-container">
         <div class="content-select-bg">
-
             <div class="content-grid">
-                <a href="#" class="content-card">
-                    <img src="<?= BASE_URL ?>/public/assets/pics/icon-crown.png" alt="Finn" width="50px">
-                    <h3>Ice King's Crown</h3>
-                </a>
 
-                <a href="#" class="content-card">
-                    <img src="<?= BASE_URL ?>/public/assets/pics/icon-book.png" alt="Bubblegum">
-                    <h3>Enrichidion</h3>
+                <?php foreach ($items as $items): ?>
+                <a href="items_detail.php?id=<?= htmlspecialchars($items['id']) ?>" class="content-card">
+                    <img src="<?= BASE_URL ?>/public/assets/pics/<?= htmlspecialchars($items['image']) ?>"
+                         alt="<?= htmlspecialchars($items['name']) ?>">
+                    <h3><?= htmlspecialchars($items['name']) ?></h3>
                 </a>
+                <?php endforeach; ?>
 
-                <a href="items_create.php" class="content-card add-card">
+                <a href="character_create.php" class="content-card add-card">
                     <i class="fa-solid fa-plus"></i>
-                    <h3>Add Items</h3>
+                    <h3>Add Character</h3>
                 </a>
 
             </div>
-
         </div>
     </section>
 </main>

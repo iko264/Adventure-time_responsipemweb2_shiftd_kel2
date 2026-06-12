@@ -22,7 +22,8 @@ foreach ($data['characters'] as $c) {
 
 // Kalau id tidak ditemukan, redirect balik ke character list
 if (!$character) {
-    die('ID tidak ditemukan. ID yang diterima: "' . htmlspecialchars($id) . '"');
+    header('Location: character.php');
+    exit;
 }
 ?>
 
@@ -33,17 +34,17 @@ if (!$character) {
     </section>
 
     <section class="content-select-container">
-        <div class="content-select-bg character-detail-bg">
+        <div class="content-select-bg content-detail-bg">
 
             <!-- Atas: Gambar kiri + Info kanan -->
-            <div class="character-detail-top">
+            <div class="content-detail-top">
 
-                <div class="character-detail-image">
+                <div class="content-detail-image">
                     <img src="<?= BASE_URL ?>/public/assets/pics/<?= htmlspecialchars($character['image']) ?>"
                          alt="<?= htmlspecialchars($character['name']) ?>">
                 </div>
 
-                <div class="character-detail-info">
+                <div class="content-detail-info">
                     <div class="info-row">
                         <span class="info-label">Name</span>
                         <span class="info-value">: <?= htmlspecialchars($character['name']) ?></span>
@@ -65,7 +66,7 @@ if (!$character) {
             </div>
 
             <!-- Bawah: Deskripsi -->
-            <div class="character-detail-desc">
+            <div class="content-detail-desc">
                 <p><?= htmlspecialchars($character['description']) ?></p>
             </div>
 
